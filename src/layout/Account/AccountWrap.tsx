@@ -38,7 +38,7 @@ const AccountWrap = ({
       </Info>
       <Details>
         <AccountInfo>
-          {bank} {account}
+          {bank} <br /> {account}
         </AccountInfo>
         <CopyButton onClick={handleCopy}>
           <Copy fill="#dfdfdf" />
@@ -83,7 +83,7 @@ const Relation = styled.span`
   color: #44484d;
 `;
 const Name = styled.span`
-  font-size: 1rem
+  font-size: 1rem;
 `;
 
 const Details = styled.div`
