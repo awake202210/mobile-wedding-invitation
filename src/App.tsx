@@ -40,7 +40,6 @@ function App() {
     <NavermapsProvider ncpClientId={ncpClientId}>
       <Container>
         <Wrapper>
-          {`ncpClientId:${ncpClientId}`}
           <Main />
         </Wrapper>
         <Wrapper>
@@ -57,7 +56,7 @@ function App() {
         </Wrapper>
         <Wrapper>
           <Heading1>오시는 길</Heading1>
-          <Location />
+          {/* <Location /> */}
         </Wrapper>
         <Wrapper>
           <Heading1>신랑 신부에게</Heading1>
