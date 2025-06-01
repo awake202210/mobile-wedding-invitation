@@ -25,7 +25,7 @@ export default Main;
 const MainTitleWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 2rem;
+  // gap: 1rem;
   // font-family: HSSanTokki20-Regular, serif;
   font-family: 양진체, Ownglyph_ParkDaHyun, MaruburiSemiBold, serif;
   line-height: 0;
@@ -34,13 +34,13 @@ const MainTitleWrapper = styled.div`
 `;
 
 const MainName = styled.p`
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   white-space: pre-line;
 `;
 
 const MainDate = styled.p`
   // font-family: 양진체, Ownglyph_ParkDaHyun, MaruburiBold, serif;
-  font-size: 4rem;
+  font-size: 2rem;
   white-space: pre-line;
 `;
 
