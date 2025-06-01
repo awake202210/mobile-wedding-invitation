@@ -40,6 +40,7 @@ const HostInfo = ({ person }: { person: BrideAndGroom }) => {
 };
 
 const HostContainer = styled.div`
+  max-width: 80%;
   border-top: 1px solid #e3e3e3;
   // border-bottom: 1px solid #e3e3e3;
   padding: 1rem 0 1rem 0;
