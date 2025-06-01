@@ -39,16 +39,16 @@ const HostInfo = ({ person }: { person: BrideAndGroom }) => {
   );
 };
 
-const HighlightedName = styled.span`
-  font-weight: 600;
-  font-size: 1.1rem;
-  color: #4f4f4f;
-  margin-right: 5px;
-`;
-
 const HostContainer = styled.div`
+  border-top: 1px solid #e3e3e3;
+  // border-bottom: 1px solid #e3e3e3;
+  padding: 1rem 0 1rem 0;
   gap: 8px;
-  font-family: HSSanTokki20-Regular, serif;
+  // font-family: HSSanTokki20-Regular, serif;
+  font-family: MaruburiSemiBold, serif;
+  font-size: 1rem;
+  letter-spacing: 0.3rem;
+  line-height: 2.2rem;
 `;
 
 const HostDetails = styled.div`
@@ -64,12 +64,21 @@ const HostDetails = styled.div`
 
 const RelationText = styled.div`
   font-style: normal;
+  font-size: 0.9rem;
+  opacity: 0.4;
   line-height: 26px;
-  width: 50px;
+  width: 5rem;
   display: flex;
   gap: 6px;
 `;
 
 const Relation = styled.div`
   width: inherit;
+`;
+
+const HighlightedName = styled.span`
+  // font-weight: 600;
+  font-family: MaruburiBold;
+  color: #4f4f4f;
+  margin-right: 5px;
 `;

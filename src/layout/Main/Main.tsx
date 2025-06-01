@@ -6,8 +6,15 @@ const Main = () => {
   const { greeting } = data;
   return (
     <div>
-      <MainImg src={mainImg} />
-      <MainTitle>{greeting.title}</MainTitle>
+      {/* <MainTitle>{greeting.title}</MainTitle> */}
+      <MainTitleWrapper>
+        <MainName>전소현</MainName>
+        <MainDate>12/6</MainDate>
+        <MainName>김범수</MainName>
+      </MainTitleWrapper>
+      <MainImgWrapper>
+        <MainImg src={mainImg} />
+      </MainImgWrapper>
       <SubTitle>{greeting.eventDetail}</SubTitle>
     </div>
   );
@@ -15,19 +22,39 @@ const Main = () => {
 
 export default Main;
 
-const MainImg = styled.img`
-  border-radius: 200px 200px 0 0;
-  width: 90%;
-  max-width: 450px;
-  padding-top: 20px;
+const MainTitleWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  // font-family: HSSanTokki20-Regular, serif;
+  font-family: 양진체, Ownglyph_ParkDaHyun, MaruburiSemiBold, serif;
+  line-height: 0;
+  color: #2f2120;
+  align-items: center;
 `;
 
-const MainTitle = styled.p`
-  font-family: HSSanTokki20-Regular, serif;
-  font-size: 2rem;
-  color: #2f2120;
-  line-height: 120%;
+const MainName = styled.p`
+  font-size: 2.5rem;
   white-space: pre-line;
+`;
+
+const MainDate = styled.p`
+  // font-family: 양진체, Ownglyph_ParkDaHyun, MaruburiBold, serif;
+  font-size: 4rem;
+  white-space: pre-line;
+`;
+
+const MainImgWrapper = styled.div`
+  width: calc(100% + 60px);
+  height: 500px;
+  overflow: hidden;
+  object-fit: cover;
+  margin: 0 -30px;
+`;
+
+const MainImg = styled.img`
+  width: 100%;
+  margin-top: -10rem;
 `;
 
 const SubTitle = styled.p`

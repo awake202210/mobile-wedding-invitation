@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { GiGinkgoLeaf } from 'react-icons/gi';
 import { NavermapsProvider } from 'react-naver-maps';
 import { Heading1 } from '@/components/Text.tsx';
 import Wrapper from '@/components/Wrapper.tsx';
@@ -45,11 +46,13 @@ function App() {
           <Main />
         </Wrapper>
         <Wrapper>
-          <Heading1>모시는 글</Heading1>
+          <Heading1>
+            <GiGinkgoLeaf />
+          </Heading1>
           <Invitation />
         </Wrapper>
         <Wrapper ref={galleryRef}>
-          <Heading1>Gallery</Heading1>
+          <Heading1>갤러리</Heading1>
           <GalleryWrap />
         </Wrapper>
         <Wrapper>

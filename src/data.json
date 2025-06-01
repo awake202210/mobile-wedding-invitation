@@ -32,7 +32,7 @@
         ]
       }
     },
-    "eventDetail": "2025년 12월 6일 (토) 17:00\n제이오스티엘 티파니홀"
+    "eventDetail": "2025년 12월 6일 (토) 오후 5시\n제이오스티엘 2층 티파니홀"
   },
   "hostInfo": [
     {
@@ -45,18 +45,6 @@
           "account": "3333-05-1645525",
           "kakaopayAccount": "",
           "tossAccount": ""
-        },
-        {
-          "name": "김승인",
-          "relation": "아버지",
-          "bank": "농협",
-          "account": "123-45-678901"
-        },
-        {
-          "name": "김명옥",
-          "relation": "어머니",
-          "bank": "농협",
-          "account": "123-45-678901"
         }
       ]
     },
@@ -70,25 +58,14 @@
           "account": "1000-4834-4317",
           "kakaopayAccount": "",
           "tossAccount": ""
-        },
-        {
-          "name": "황아빠",
-          "relation": "아버지",
-          "bank": "농협",
-          "account": "123-45-678901"
-        },
-        {
-          "name": "이엄마",
-          "relation": "어머니",
-          "bank": "농협",
-          "account": "123-45-678901"
         }
       ]
     }
   ],
   "mapInfo": {
-    "address1": "제이오스티엘 티파니홀",
-    "address2": "서울 구로구 경인로 565\n0507-1447-2222",
+    "address1": "제이오스티엘",
+    "address2": "2층 티파니홀",
+    "address3": "서울 구로구 경인로 565\n0507-1447-2222",
     "naverMap": "https://map.naver.com/p/directions/-/14124190.9542216,4509559.5806679,제이오스티엘,13358566,PLACE_POI/-/transit?c=12.00,0,0,0,dh",
     "kakaoMap": "https://map.kakao.com/?map_type=TYPE_MAP&target=car&rt=,,473413.000000001,1112278.0000000016&rt1=&rt2=제이오스티엘&rtIds=,21728870",
     "lat": 37.5035892,
@@ -101,7 +78,7 @@
     },
     {
       "title": "\uD83D\uDCCD 주차안내",
-      "desc": "\uD83D\uDC49\uD83C\uDFFB 건물 옆 2층 3시간 무료주차\n"
+      "desc": "\uD83D\uDC49\uD83C\uDFFB 건물 1층 및 주차타워 2층 5시간 무료주차\n(2층 주차 시 올라왔던 길로 내려와서 식장 입장)"
     }
   ],
   "emojis": [
