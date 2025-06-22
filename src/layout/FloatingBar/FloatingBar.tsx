@@ -23,6 +23,27 @@ const FloatingBar = ({ isVisible }: { isVisible: boolean }) => {
   //   });
   // }, []);
 
+  /**
+   * 카카오톡 공유 링크
+   * @returns
+   */
+  if (!window.Kakao) return;
+
+  const kakao = window.Kakao;
+  if (!kakao.isInitialized()) {
+    kakao.init('8ba3233dd1ff779d905c0355a5b9b9cc'); // 여기에 발급받은 JavaScript 키를 입력합니다.
+  }
+  const handleKakaoShare = () => {
+    Kakao.Share.createCustomButton({
+      container: '#kakaotalk-share-btn',
+      templateId: 121712,
+      templateArgs: {
+        title: '저희 결혼합니다 ❤️',
+        description: '아름다운 날 자리를 빛내주시면 좋겠습니다.',
+      },
+    });
+  };
+
   const handleCopy = () => {
     navigator.clipboard.writeText(window.location.href).then(
       () => {
@@ -57,11 +78,14 @@ const FloatingBar = ({ isVisible }: { isVisible: boolean }) => {
       </Button>
       <Button onClick={handleCopy}>
         <Share fill="#e88ca6" />
-        공유
+        주소 복사
+      </Button>
+      <Button onClick={handleKakaoShare} id="kakaotalk-share-btn">
+        <Share fill="#e88ca6" />
+        카카오톡 공유
       </Button>
       <Button onClick={handleScroll}>
-        <Upward fill="#e88ca6" />
-        위로
+        <Upward fill="#e88ca6" />맨 위로
       </Button>
     </Nav>
   );
