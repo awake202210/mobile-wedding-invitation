@@ -1,13 +1,32 @@
 // import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import styled from '@emotion/styled';
 import data from 'data.json';
 // import { increment, onValue, ref, update } from 'firebase/database';
 // import { realtimeDb } from 'firebase.ts';
 import JSConfetti from 'js-confetti';
+import { RiKakaoTalkFill } from 'react-icons/ri';
 import Heart from '@/assets/icons/heart_plus.svg?react';
 import Share from '@/assets/icons/share.svg?react';
 import Upward from '@/assets/icons/upward.svg?react';
 import Button from '@/components/Button.tsx';
+
+const initKakaoShareButton = () => {
+  if (!window.Kakao) return;
+  const kakao = window.Kakao;
+
+  if (!kakao.isInitialized()) {
+    kakao.init('8ba3233dd1ff779d905c0355a5b9b9cc'); // 여기에 발급받은 JavaScript 키를 입력합니다.
+  }
+  kakao.Share.createCustomButton({
+    container: '#kakaotalk-share-btn',
+    templateId: 121712,
+    templateArgs: {
+      title: '저희 결혼합니다 ❤️',
+      description: '아름다운 날 자리를 빛내주셨으면 좋겠습니다.',
+    },
+  });
+};
 
 const FloatingBar = ({ isVisible }: { isVisible: boolean }) => {
   const { emojis } = data;
@@ -15,34 +34,35 @@ const FloatingBar = ({ isVisible }: { isVisible: boolean }) => {
   // TODO: count 기능 사용 원할시 firebase realtime db 연결!
   // const [count, setCount] = useState(0);
 
-  // useEffect(() => {
-  // TODO: realtime db 에 likes 객체 추가.
-  //   const dbRef = ref(realtimeDb, 'likes');
-  //   onValue(dbRef, (snapshot) => {
-  //     setCount(Number(snapshot.val()));
-  //   });
-  // }, []);
+  useEffect(() => {
+    // TODO: realtime db 에 likes 객체 추가.
+    // const dbRef = ref(realtimeDb, 'likes');
+    // onValue(dbRef, (snapshot) => {
+    //   setCount(Number(snapshot.val()));
+    // });
+    initKakaoShareButton();
+  }, []);
 
   /**
    * 카카오톡 공유 링크
    * @returns
    */
-  const handleKakaoShare = () => {
-    if (!window.Kakao) return;
-    const kakao = window.Kakao;
+  // const handleKakaoShare = () => {
+  //   if (!window.Kakao) return;
+  //   const kakao = window.Kakao;
 
-    if (!kakao.isInitialized()) {
-      kakao.init('8ba3233dd1ff779d905c0355a5b9b9cc'); // 여기에 발급받은 JavaScript 키를 입력합니다.
-    }
-    kakao.Share.createCustomButton({
-      container: '#kakaotalk-share-btn',
-      templateId: 121712,
-      templateArgs: {
-        title: '저희 결혼합니다 ❤️',
-        description: '아름다운 날 자리를 빛내주셨으면 좋겠습니다.',
-      },
-    });
-  };
+  //   if (!kakao.isInitialized()) {
+  //     kakao.init('8ba3233dd1ff779d905c0355a5b9b9cc'); // 여기에 발급받은 JavaScript 키를 입력합니다.
+  //   }
+  //   kakao.Share.createCustomButton({
+  //     container: '#kakaotalk-share-btn',
+  //     templateId: 121712,
+  //     templateArgs: {
+  //       title: '저희 결혼합니다 ❤️',
+  //       description: '아름다운 날 자리를 빛내주셨으면 좋겠습니다.',
+  //     },
+  //   });
+  // };
 
   const handleCopy = () => {
     navigator.clipboard.writeText(window.location.href).then(
@@ -80,12 +100,14 @@ const FloatingBar = ({ isVisible }: { isVisible: boolean }) => {
         <Share fill="#e88ca6" />
         주소 복사
       </Button>
-      <Button onClick={handleKakaoShare} id="kakaotalk-share-btn">
-        <Share fill="#e88ca6" />
-        카카오톡 공유
+      <Button id="kakaotalk-share-btn" style={{ background: '#FEE500' }}>
+        {/* <Share fill="#e88ca6" /> */}
+        <RiKakaoTalkFill />
+        카톡 공유
       </Button>
       <Button onClick={handleScroll}>
-        <Upward fill="#e88ca6" />맨 위로
+        <Upward fill="#e88ca6" />
+        {/* 위로 */}
       </Button>
     </Nav>
   );

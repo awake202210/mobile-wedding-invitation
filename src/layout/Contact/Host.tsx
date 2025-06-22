@@ -33,7 +33,7 @@ const HostInfo = ({ person }: { person: BrideAndGroom }) => {
         )}
       </HostParents>
       <RelationText>
-        <div>의</div>
+        {/* <div>의</div> */}
         <Relation>{person.relation}</Relation>
       </RelationText>
       <HighlightedName>{person.name}</HighlightedName>
@@ -42,14 +42,14 @@ const HostInfo = ({ person }: { person: BrideAndGroom }) => {
 };
 
 const HostContainer = styled.div`
-  max-width: 90%;
+  max-width: 100%;
   border-top: 1px solid #e3e3e3;
   // border-bottom: 1px solid #e3e3e3;
   padding: 1rem 0;
   gap: 8px;
   // font-family: HSSanTokki20-Regular, serif;
   font-family: MaruburiSemiBold, serif;
-  font-size: 1rem;
+  font-size: 0.9rem;
   letter-spacing: 0.3rem;
   line-height: 2.2rem;
 `;
@@ -71,7 +71,7 @@ const HostParents = styled.div`
 
 const RelationText = styled.div`
   font-style: normal;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   opacity: 0.4;
   line-height: 26px;
   width: 5rem;
